@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro Sobel - Procesamiento de Imágenes y Matrices</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Filtro Sobel y Conversión de Matrices a Imágenes</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".png,.jpg,.jpeg,.txt" required>
+            <button type="submit">Subir y Procesar</button>
+        </form>
 
+        {% if error_message %}
+        <div class="error-message">
+            <h2>Error</h2>
+            <p>{{ error_message }}</p>
+        </div>
+        {% endif %}
